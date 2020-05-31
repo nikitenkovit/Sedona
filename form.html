@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sedona</title>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <div class="page-header__wrapper">
+            <nav class="main-nav">
+                <button class="main-nav__button-close" type="button">Закрыть меню</button>
+                <ul class="main-nav__list site-list">
+                    <li class="main-nav__item"><a class="main-nav__link" href="index.html">Главная</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="#">Фото и видео</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link site-list__item--active" href="form.html">Форма отзыва</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="#">HTML ACADEMY</a></li>
+                </ul>
+            </nav>
+            <div class="page-header__logo-container">
+                <a class="page-header--logo" href="index.html">
+                    <img class="page-header__logo--image" src="#" width="102" height="83" alt="Логотип city of Sedona">
+                </a>
+                <button class="main-nav__button-open" type="button">Открыть меню</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="intro">
+            <div class="intro__slogan">
+                <img class="intro__slogan--image" src="#" width="229" height="39" alt="надпись SEDONA">
+            </div>
+        </div>
+
+
+        <section class="page-main__introduction">
+            <h1 class="introduction__title">Оставте свой отзыв</h1>
+            <p class="introduction__description">
+                Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях
+            </p>
+        </section>
+
+        <section class="feedback">
+            <h2 class="visually-hidden">Форма обратной связи</h2>
+            <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="post">
+
+                <fieldset class="feedback-form__group feedback-form__group-name">
+                    <legend class="feedback-form__title">Представтесь:</legend>
+                    <label class="feedback-form__label" for="first-name">Имя*:</label>
+                    <input class="feedback-form__input" type="text" name="first-name" id="first-name" value="Петр">
+                    <label class="feedback-form__label" for="second-name">Фамилия*:</label>
+                    <input class="feedback-form__input" type="text" name="second-name" id="second-name" value="Иванов">
+                    <label class="feedback-form__label" for="patronymic">Отчество:</label>
+                    <input class="feedback-form__input" type="text" name="patronymic" id="patronymic" value="Александрович">
+                </fieldset>
+
+                <fieldset class="feedback-form__group feedback-form__group-сontact">
+                    <legend class="feedback-form__title">Контактная информация:</legend>
+                    <label class="feedback-form__label" for="tel">Контактный телефон*:</label>
+                    <input class="feedback-form__input" type="tel" name="tel" id="tel" value="Введите телефон">
+                    <label class="feedback-form__label" for="email">Электронная почта*:</label>
+                    <input class="feedback-form__input" type="email" name="email" id="email" value="Введите e-mail">
+                </fieldset>
+
+                <fieldset class="feedback-form__group feedback-form__group-impressions">
+                    <legend class="feedback-form__title">Ваше общее впечатление:</legend>
+                    <label class="feedback-form__label" for="positive">Скорее положительное</label>
+                    <input class="feedback-form__radio" type="radio" name="impression" value="positive" id="positive">
+                    <label class="feedback-form__label" for="negative">Скорее отрицательное</label>
+                    <input class="feedback-form__radio" type="radio" name="impression" value="negative" id="negative">
+                    <label class="feedback-form__label" for="difficult">Затрудняюсь ответить</label>
+                    <input class="feedback-form__radio" type="radio" name="impression" value="difficult" id="difficult">
+                </fieldset>
+
+                <fieldset class="feedback-form__group feedback-form__group-sights">
+                    <legend class="feedback-form__title">Посещенные
+                        достопримечательности:</legend>
+                    <label class="feedback-form__label" for="bridge" checked>Мост Дьявола</label>
+                    <input class="feedback-form__checkbox" type="checkbox" name="bridge" id="bridge" checked>
+                    <label class="feedback-form__label" for="mountain">Гора-Колокол</label>
+                    <input class="feedback-form__checkbox" type="checkbox" name="mountain" id="mountain" checked>
+                    <label class="feedback-form__label" for="park">Слайд-парк</label>
+                    <input class="feedback-form__checkbox" type="checkbox" name="park" id="park" checked>
+                    <label class="feedback-form__label" for="rocks">Красные скалы</label>
+                    <input class="feedback-form__checkbox" type="checkbox" name="rocks" id="rocks">
+                </fieldset>
+
+                <fieldset class="feedback-form__group feedback-form__group-emotions">
+                    <legend class="feedback-form__title">Опишите свои эмоции:</legend>
+                    <textarea class="feedback-form__textarea" name="emotions" id="emotions" rows="4" cols="25">Опишите подробно все свои восторги</textarea>
+                </fieldset>
+
+                <input class="feedback-form__button button" type="submit" value="Отправить отзыв">
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="page-footer">
+        <a class="page-footer__title" href="https://www.instagram.com/explore/tags/visitsedona/" target="_blank">
+            #visitsedona
+        </a>
+        <div class="page-footer__social social">
+            <ul class="social__list">
+                <li class="social__item">
+                    <a href="https://twitter.com/CityofSedonaAZ" target="_blank">Мы в Твиттере</a>
+                </li>
+                <li class="social__item">
+                    <a href="https://www.facebook.com/CityofSedonaAZ" target="_blank">Мы в Фейсбуке</a>
+                </li>
+                <li class="social__item">
+                    <a href="https://www.youtube.com/watch?v=IqTWvmN954s" target="_blank">Мы в Ютьюбе</a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-footer__copyright copyright">
+            <b class="copyright__text">Разработано</b>
+            <a class="button copyright__link" href="https://htmlacademy.ru" target="_blank">HTML Academy</a>
+        </div>
+    </footer>
+
+</body></html>
