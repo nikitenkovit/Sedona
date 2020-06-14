@@ -13,31 +13,25 @@
   <header class="page-header">
     <nav class="main-nav">
       <button class="main-nav__button main-nav__button-close" type="button">
-        <svg width="23" height="22">
-          <polygon points="22.2,2.8 19.4,0 11.1,8.3 2.8,0 0,2.8 8.3,11.1 0,19.4 2.8,22.2 11.1,13.9 19.4,22.2 22.2,19.4 13.9,11.1 " />
-        </svg>
       </button>
-      <ul class="main-nav__list site-list">
-        <li class="main-nav__item site-list__item--active"><a class="main-nav__link" href="index.html">Главная</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="photo.html">Фото и видео</a></li>
+      <ul class="main-nav__list main-nav__list--left">
+        <li class="main-nav__item"><a class="main-nav__link" href="index.html">Главная</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="photo.html">Фото и видео</a></li>
+      </ul>
+
+      <div class="logo">
+        <a class="logo__link" href="index.html">
+          <img class="logo--image" src="img/logo-mobile.svg" width="102" height="83" alt="Логотип city of Sedona">
+        </a>
+        <button class="main-nav__button main-nav__button-open" type="button">Открыть меню
+        </button>
+      </div>
+
+      <ul class="main-nav__list main-nav__list--right">
         <li class="main-nav__item"><a class="main-nav__link" href="form.html">Форма отзыва</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="#">HTML ACADEMY</a></li>
       </ul>
     </nav>
-    <div class="logo">
-      <a class="logo__link" href="#">
-        <img class="logo--image" src="img/logo-mobile.svg" width="102" height="83" alt="Логотип city of Sedona">
-      </a>
-      <button class="main-nav__button main-nav__button-open" type="button">Открыть меню
-        <svg width="23" height="20">
-          <g>
-            <rect x="0" y="0" width="23" height="4" />
-            <rect x="0" y="8" width="23" height="4" />
-            <rect x="0" y="16" width="23" height="4" />
-          </g>
-        </svg>
-      </button>
-    </div>
   </header>
 
   <main class="photo-page-main">
