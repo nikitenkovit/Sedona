@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Фото и видео</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -38,7 +39,7 @@
 
     <div class="intro">
       <div class="intro__slogan">
-        <img class="intro__slogan--image" src="img/introSedona.svg" width="229" height="39" alt="надпись SEDONA">
+        <img class="intro__slogan--image" src="img/introSedona.svg" width="458" height="78" alt="надпись SEDONA">
       </div>
     </div>
 
@@ -57,57 +58,79 @@
       <ul class="photo__list">
         <li class="photo__item">
           <div class="photo__wrapper">
-            <img class="photo__image" src="img/photo-1-mobile.jpg" alt="Дорога в пустыне" width="280" height="280">
-            <p class="photo__description">Неродные просторы</p>
-            <p class="photo__author">Автор фото: Борис</p>
-            <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">1350</span></button>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-1-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/photo-1-tablet.jpg">
+              <img class="photo__image" src="img/photo-1-mobile.jpg" alt="Дорога в пустыне">
+            </picture>
+            <div class="photo__container">
+              <p class="photo__description">Неродные просторы</p>
+              <p class="photo__author">Автор фото: Борис</p>
+              <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">1350</span></button>
+            </div>
           </div>
         </li>
         <li class="photo__item">
           <div class="photo__wrapper">
-            <img class="photo__image" src="img/photo-2-mobile.jpg" alt="Цветущий кактус" width="280" height="280">
-            <p class="photo__description">Местная растительность</p>
-            <p class="photo__author">Автор фото: Сергей</p>
-            <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">143</span></button>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-2-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/photo-2-tablet.jpg">
+              <img class="photo__image" src="img/photo-2-mobile.jpg" alt="Цветущий кактус">
+            </picture>
+            <div class="photo__container">
+              <p class="photo__description">Местная растительность</p>
+              <p class="photo__author">Автор фото: Сергей</p>
+              <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">143</span></button>
+            </div>
           </div>
         </li>
         <li class="photo__item">
           <div class="photo__wrapper">
-            <img class="photo__image" src="img/photo-3-mobile.jpg" alt="Серпантин" width="280" height="280">
-            <p class="photo__description">Дорога на север</p>
-            <p class="photo__author">Автор фото: Петр</p>
-            <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">96</span></button>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-3-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/photo-3-tablet.jpg">
+              <img class="photo__image" src="img/photo-3-mobile.jpg" alt="Серпантин">
+            </picture>
+            <div class="photo__container">
+              <p class="photo__description">Дорога на север</p>
+              <p class="photo__author">Автор фото: Петр</p>
+              <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">96</span></button>
+            </div>
           </div>
         </li>
         <li class="photo__item">
           <div class="photo__wrapper">
-            <img class="photo__image" src="img/photo-4-mobile.jpg" alt="Скала Мост Дьявола" width="280" height="280">
-            <p class="photo__description">Мост Дьявола</p>
-            <p class="photo__author">Автор фото: Антон</p>
-            <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">254</span></button>
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-4-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="img/photo-4-tablet.jpg">
+              <img class="photo__image" src="img/photo-4-mobile.jpg" alt="Скала Мост Дьявола">
+            </picture>
+            <div class="photo__container">
+              <p class="photo__description">Мост Дьявола</p>
+              <p class="photo__author">Автор фото: Антон</p>
+              <button class="thumbs-up-button" type="button"><span class="thumbs-up-button__likes-number">254</span></button>
+            </div>
           </div>
         </li>
       </ul>
     </section>
 
     <section class="video">
-      <div class="video__wrapper">
-        <h2 class="video__title">Все еще сомневаетесь?</h2>
-        <p class="video__description">
-          Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
-        </p>
-      </div>
+      <h2 class="video__title">Все еще сомневаетесь?</h2>
+      <p class="video__description">
+        Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!
+      </p>
       <div class="video__container">
-        <img src="img/video-mobile.jpg" alt="" class="video__image" width="321" height="201">
-        <div class="video__wrapper">
-          <div class="control-panel-top">
-            <input class="control-panel-top__range" type="range" id="range">
-          </div>
-          <div class="control-panel-bottom">
-            <button class="control-panel-bottom__btn control-panel-bottom__btn--restart" type="button">Заново</button>
-            <button class="control-panel-bottom__btn control-panel-bottom__btn--subtitle" type="button">Субтитры</button>
-            <button class="control-panel-bottom__btn control-panel-bottom__btn--full-screen" type="button">Во весь экран</button>
-          </div>
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/video-desktop.jpg">
+          <source media="(min-width: 768px)" srcset="img/video-tablet.jpg">
+          <img class="video__image" src="img/video-mobile.jpg" alt="дорога между скал">
+        </picture>
+        <div class="control-panel">
+          <button class="control-panel__btn control-panel__btn--restart" type="button">Заново</button>
+          <input class="control-panel__range" type="range" id="range">
+          <button class="control-panel__btn control-panel__btn--subtitle" type="button">Субтитры</button>
+          <button class="control-panel__btn control-panel__btn--full-screen" type="button">Во весь экран</button>
         </div>
       </div>
     </section>
@@ -121,18 +144,21 @@
       <ul class="social__list">
         <li class="social__item">
           <a class="social__link social__link--twitter" href="https://twitter.com/CityofSedonaAZ" target="_blank">
-         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><path d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15">
+              <path d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z" /></svg>
             Мы в Твиттере
           </a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--fb" href="https://www.facebook.com/CityofSedonaAZ" target="_blank">
-           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"><path d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22">
+              <path d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z" /></svg>
             Мы в Фейсбуке</a>
         </li>
         <li class="social__item">
           <a class="social__link social__link--yb" href="https://www.youtube.com/watch?v=IqTWvmN954s" target="_blank">
-           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16">
+              <path d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z" /></svg>
             Мы в Ютьюбе</a>
         </li>
       </ul>
