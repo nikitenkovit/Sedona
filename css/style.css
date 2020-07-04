@@ -54,6 +54,9 @@ body {
 }
 
 /*page-header*/
+.page-header {
+  position: relative;
+}
 
 /*main nav*/
 
@@ -72,6 +75,8 @@ body {
   border: none;
   background-color: transparent;
   fill: #81b3d2;
+  outline: none;
+  cursor: pointer;
 }
 
 
@@ -86,11 +91,17 @@ body {
 }
 
 .main-nav__list {
+  height: 0;
   margin: 0;
   padding: 0;
   list-style: none;
   background-color: #81b3d2;
+  overflow: hidden;
+  transition: height ease-out .3s;
+}
 
+.show {
+  height: 115px;
 }
 
 .main-nav__item {
@@ -141,7 +152,6 @@ body {
 /*logo*/
 
 .logo {
-  order: 3;
   align-self: center;
   height: 55px;
   background-color: #ffffff;
@@ -153,16 +163,13 @@ body {
 
 .main-nav__button-open {
   position: absolute;
+  bottom: 17px;
   right: 20px;
-  top: 245px;
   cursor: pointer;
   background: url("../img/icon-menu.png") no-repeat 50% 50%;
 }
 
 @media (min-width: 768px) {
-  .logo {
-    order: 0;
-  }
 
   .main-nav {
     flex-direction: row;
@@ -173,8 +180,13 @@ body {
   .main-nav__list {
     display: flex;
     flex-direction: row;
-    background-color: #ffffff;
     flex-grow: 1;
+    height: auto;
+    background-color: #ffffff;
+  }
+
+  .main-nav__list--right {
+    order: 1;
   }
 
   .main-nav__item {
@@ -988,6 +1000,10 @@ body {
   cursor: pointer;
 }
 
+.thumbs-up-button--positive {
+  background-image: url("../img/like-icon-positive-mobile.svg")
+}
+
 .thumbs-up-button__likes-number {
   margin: 0;
   padding: 0;
@@ -1075,6 +1091,10 @@ body {
     background-image: url("../img/like-icon-desctop.svg");
     background-position: 0 -2px;
   }
+
+  .thumbs-up-button--positive {
+  background-image: url("../img/like-icon-positive-desctop.svg")
+}
 
   .thumbs-up-button__likes-number {
     color: #ffffff;
@@ -1174,6 +1194,7 @@ body {
   cursor: pointer;
   background-color: transparent;
   z-index: 10;
+  outline: none;
 }
 
 .control-panel__btn--restart {
