@@ -52,19 +52,19 @@
 
     <section class="feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="post">
+      <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="post" novalidate>
 
         <fieldset class="feedback-form__group feedback-form__group-name">
           <legend class="feedback-form__title">Представьтесь:</legend>
           <div class="feedback-form__container">
             <label class="feedback-form__label" for="first-name">Имя*:
             </label>
-            <input class="feedback-form__input" type="text" name="first-name" id="first-name" value="Петр">
+            <input class="feedback-form__input field" type="text" name="first-name" id="first-name" value="Петр" required>
           </div>
           <div class="feedback-form__container">
             <label class="feedback-form__label" for="second-name">Фамилия*:
             </label>
-            <input class="feedback-form__input" type="text" name="second-name" id="second-name" value="Иванов">
+            <input class="feedback-form__input field" type="text" name="second-name" id="second-name" value="Иванов" required>
           </div>
           <div class="feedback-form__container">
             <label class="feedback-form__label" for="patronymic">Отчество:
@@ -79,12 +79,12 @@
             <div class="feedback-form__container feedback-form__container--phone">
               <label class="feedback-form__label feedback-form__label--phone" for="tel"><span class="feedback-form__group-contact--span">Контактный</span> телефон*:
               </label>
-              <input class="feedback-form__input" type="tel" name="tel" id="tel" value="Введите телефон">
+              <input class="feedback-form__input field" type="tel" name="tel" id="tel" value="Ведите телефон" required pattern="^\+\d{1} \(\d{3}\) \d{3} \d{4}$">
             </div>
             <div class="feedback-form__container">
               <label class="feedback-form__label feedback-form__label--mail" for="email">Электронная почта*:
               </label>
-              <input class="feedback-form__input" type="email" name="email" id="email" value="Введите e-mail">
+              <input class="feedback-form__input field" type="email" name="email" id="email" value="Введите e-mail" required>
             </div>
           </div>
         </fieldset>
@@ -217,6 +217,8 @@
       </div>
     </div>
   </div>
-
   <script src="js/script.js"></script>
-</body></html>
+  <script src="js/form.js"></script>
+</body>
+
+</html>
