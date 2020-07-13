@@ -1,0 +1,59 @@
+/*introduction*/
+
+.introduction {
+  background-color: #ffffff;
+}
+
+.introduction__wrapper {
+  width: 87.5%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.introduction__title {
+  margin: 0;
+  padding: 40px 10px 27px 10px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
+
+.introduction__description {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  text-align: center
+}
+
+@media (min-width: 768px) {
+  .introduction__title {
+    padding-top: 50px;
+    font-size: 21px;
+  }
+
+  .photo-page-main .introduction__title,
+  .form-page-main .introduction__title {
+    font-size: 30px;
+    padding-top: 70px;
+  }
+
+  .introduction__description {
+    padding-bottom: 50px;
+  }
+
+  .photo-page-main .introduction__description,
+  .form-page-main .introduction__description {
+    width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .photo-page-main .introduction__title,
+  .form-page-main .introduction__title {
+    padding-top: 110px;
+  }
+}

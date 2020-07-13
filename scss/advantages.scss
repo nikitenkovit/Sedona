@@ -1,0 +1,323 @@
+/*advantages*/
+
+.advantages__wrapper {
+  padding: 0 20px;
+}
+
+.advantages__item--first-reason .advantages__wrapper,
+.advantages__item--second-reason .advantages__wrapper {
+  background-color: #81b3d2;
+  color: #ffffff;
+}
+
+.advantages__item:nth-child(n+3) {
+  background-color: #eeeeee;
+}
+
+.advantages__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 21px;
+  text-align: center
+}
+
+.advantages__title {
+  margin: 0;
+  padding: 0;
+  padding-top: 41px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.advantages__number {
+  position: relative;
+  width: 50px;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 16px;
+}
+
+.advantages__number::before,
+.advantages__number::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  width: 9px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.advantages__number::before {
+  left: 0;
+}
+
+.advantages__number::after {
+  right: 0;
+}
+
+.advantages__item:nth-child(n+3) .advantages__number::before,
+.advantages__item:nth-child(n+3) .advantages__number::after {
+  background-color: #333333;
+}
+
+.advantages__description {
+  margin: 0;
+  padding: 0 5px 41px 5px;
+}
+
+.advantages__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.advantages__item:nth-child(n+3) .advantages__title {
+  padding-top: 27px;
+  color: #000000;
+}
+
+.advantages__item:nth-child(n+3) .advantages__description {
+  padding: 0 5px 25px 5px;
+}
+
+.advantages__item:nth-child(n+3):not(:last-child) .advantages__description {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.advantages__item--first-reason .advantages__title {
+  padding-top: 60px;
+}
+
+.advantages__item--first-reason::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 37px;
+  background-image: url("../img/white-triangle.svg");
+  background-repeat: no-repeat;
+}
+
+.first-reason__list {
+  width: 280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  list-style: none;
+  background-color: #ffffff;
+  color: #333333;
+  text-align: left
+}
+
+.first-reason__item {
+  padding-left: 50px;
+}
+
+.first-reason__title {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.first-reason__title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: -50px;
+}
+
+.first-reason__item--food .first-reason__description {
+  padding-bottom: 40px;
+}
+
+.first-reason__item--accommodation .first-reason__title::before {
+  background-image: url("../img/reasonHouse.svg");
+  background-repeat: no-repeat;
+  background-size: 38px 36px;
+}
+
+.first-reason__item--souvenirs .first-reason__title::before {
+  background-image: url("../img/reasonGift.svg");
+  background-repeat: no-repeat;
+  background-size: 38px 36px;
+}
+
+.first-reason__item--food .first-reason__title::before {
+  background-image: url("../img/reasonBurger.svg");
+  background-repeat: no-repeat;
+  background-size: 39px 34px;
+}
+
+.first-reason__description {
+  margin: 0;
+  padding: 0;
+  padding-top: 18px;
+}
+
+@media (min-width: 768px) {
+
+  .advantages {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .advantages__wrapper {
+    width: 256px;
+    height: 256px;
+    box-sizing: border-box;
+  }
+
+  .advantages__title {
+    width: 150px;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-bottom: 10px;
+    font-size: 21px;
+    box-sizing: border-box;
+  }
+
+  .advantages__item--first-reason .advantages__title {
+    padding-top: 45px;
+  }
+
+  .advantages__item:nth-child(n+3) {
+    flex-grow: 1;
+  }
+
+  .advantages__item:nth-child(n+3) .advantages__title {
+    padding-top: 45px;
+  }
+
+  .advantages__number {
+    padding-bottom: 25px;
+  }
+
+  .advantages__description {
+    max-width: 170px;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  .advantages__item:nth-child(n+3):not(:last-child) .advantages__description {
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .advantages__item--first-reason,
+  .advantages__item--second-reason {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .advantages__item--second-reason {
+    flex-direction: row-reverse;
+  }
+
+  .advantages__image {
+    display: block;
+    flex-basis: 512px;
+    height: 256px;
+    flex-grow: 1;
+  }
+
+  .advantages__item--first-reason::before {
+    display: none;
+  }
+
+  .first-reason__list {
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+
+  .first-reason__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 33.3%;
+    padding: 0;
+  }
+
+  .first-reason__item--souvenirs {
+    order: 3;
+  }
+
+  .first-reason__item--food {
+    order: 2;
+  }
+
+  .first-reason__title {
+    width: 175px;
+    padding-top: 160px;
+    font-size: 21px;
+  }
+
+  .first-reason__title::before {
+    top: 50px;
+    left: 50px;
+    width: 77px;
+    height: 75px;
+  }
+
+  .first-reason__description {
+    width: 175px;
+  }
+
+  .first-reason__item--accommodation .first-reason__title::before {
+    top: 52px;
+    background-size: 75px 72px;
+  }
+
+  .first-reason__item--souvenirs .first-reason__title::before {
+    left: 60px;
+    background-size: 64px 75px;
+  }
+
+  .first-reason__item--food .first-reason__title::before {
+    top: 56px;
+    background-size: 77px 68px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .advantages {
+    max-width: 1200px;
+  }
+
+  .advantages__wrapper {
+    width: 400px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .advantages__description {
+    max-width: 280px;
+  }
+
+  .advantages__image {
+    width: 800px;
+  }
+
+  .first-reason__item {
+    text-align: center;
+    width: 400px;
+  }
+}
