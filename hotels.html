@@ -120,34 +120,10 @@
 
     <section class="hotels">
       <h2 class="visually-hidden">Список отелей</h2>
-      <ul class="hotels__list">
-        <li class="hotels__item">
-          <div class="hotels__wrapper">
-            <img src="img/hotels/amara-resort.jpg" alt="фотография отеля" class="hotels__image" width="135" height="90">
-            <div class="hotels__container">
-              <h3 class="hotels__title">Amara resort &#38; spa</h3>
-              <div class="hotels__information">
-                <span class="hotels__type">Гостиница</span>
-                <span class="hotels__min-price">
-                  от 3000 &#8399;
-                </span>
-              </div>
-              <div class="hotels__buttons">
-                <a href="#" class="hotels__button-to-about button">Подробнее</a>
-                <a href="#" class="hotels__button-to-reserve button">Забронировать</a>
-              </div>
-            </div>
-            <div class="hotels__rating">
-              <p class="hotels__stars">&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="hotels__rating-number">
-                Рейтинг: 8,5
-              </p>
-            </div>
-          </div>
-        </li>
+      <ul class="hotels__list" id="hotels__list">
       </ul>
 
-      <template class="hotels__template">
+      <template class="hotels__template" id="template-data">
         <li class="hotels__item">
           <div class="hotels__wrapper">
             <img src="#" alt="фотография отеля" class="hotels__image" width="135" height="90">
@@ -216,6 +192,7 @@
         HTML Academy</a>
     </div>
   </footer>
+  <script src="js/hotels.js"></script>
   <script src="js/script.js"></script>
   <script src="js/dobleSlider.js"></script>
 </body></html>

@@ -1,5 +1,5 @@
 (function () {
-
+"use strict";
     init2slider('range', 'rangeBetween', 'btn1', 'btn2', 'inpt1', 'inpt2');
 
     window.onresize = () => {
