@@ -46,7 +46,7 @@
             <label class="search-hotel-form__label" for="pool">Бассейн</label>
           </div>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="parking" name="parking">
+            <input class="search-hotel-form__checkbox" type="checkbox" id="parking" name="parking" checked>
             <label class="search-hotel-form__label" for="parking">Парковка</label>
           </div>
           <div class="search-hotel-form__wrapper">
@@ -95,7 +95,7 @@
       <h2 class="sorting__title visually-hidden">Сортировка отелей</h2>
       <div class="sorting__counter">
         <strong class="counter__description">
-          Найдено: <span class="counter__number">3</span>
+          Найдено: <span class="counter__number" id="counter__number">0</span>
         </strong>
       </div>
       <ul class="sorting__list">
@@ -139,10 +139,8 @@
               </div>
             </div>
             <div class="hotels__rating">
-              <p class="hotels__stars">&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="hotels__rating-number">
-                Рейтинг: 8,5
-              </p>
+              <p class="hotels__stars"></p>
+              <p class="hotels__rating-number"></p>
             </div>
           </div>
         </li>
