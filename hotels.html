@@ -38,34 +38,34 @@
 
     <section class="search-hotel">
       <h1 class="search-hotels__title visually-hidden">Поиск отеля</h1>
-      <form class="search-hotel-form" action="https://echo.htmlacademy.ru/" method="post" novalidate>
+      <form class="search-hotel-form" action="https://echo.htmlacademy.ru/" method="post" novalidate id="search-hotel-form">
         <fieldset class="search-hotel-form__group search-hotel-form__group--infrastructure" name="infrastructure">
           <legend class="search-hotel-form__title">Инфраструктура:</legend>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="pool" name="pool" checked>
+            <input class="search-hotel-form__checkbox infrastructure__checkbox" type="checkbox" id="pool" name="pool">
             <label class="search-hotel-form__label" for="pool">Бассейн</label>
           </div>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="parking" name="parking" checked>
+            <input class="search-hotel-form__checkbox infrastructure__checkbox" type="checkbox" id="parking" name="parking" checked>
             <label class="search-hotel-form__label" for="parking">Парковка</label>
           </div>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="wi-fi" name="wi-fi">
+            <input class="search-hotel-form__checkbox infrastructure__checkbox" type="checkbox" id="wi-fi" name="wi-fi">
             <label class="search-hotel-form__label" for="wi-fi">Wi-Fi</label>
           </div>
         </fieldset>
         <fieldset class="search-hotel-form__group search-hotel-form__group--habitation" name="habitation">
           <legend class="search-hotel-form__title">Тип жилья:</legend>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="hotel" name="hotel" checked>
+            <input class="search-hotel-form__checkbox type__checkbox" type="checkbox" id="hotel" name="hotel" checked>
             <label class="search-hotel-form__label" for="hotel">Гостиница</label>
           </div>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="motel" name="motel" checked>
+            <input class="search-hotel-form__checkbox type__checkbox" type="checkbox" id="motel" name="motel" checked>
             <label class="search-hotel-form__label" for="motel">Мотель</label>
           </div>
           <div class="search-hotel-form__wrapper">
-            <input class="search-hotel-form__checkbox" type="checkbox" id="apartments" name="apartments" checked>
+            <input class="search-hotel-form__checkbox type__checkbox" type="checkbox" id="apartments" name="apartments" checked>
             <label class="search-hotel-form__label" for="apartments">Апартаменты</label>
           </div>
         </fieldset>
@@ -74,11 +74,11 @@
           <div class="search-hotel-form__wrapper">
             <div class="search-hotel-form__container">
               <label class="search-hotel-form__label" for="inpt1">От</label>
-              <input class="search-hotel-form__input-min" type="number" name="min" id="inpt1" value="0" min="0" max="4000">
+              <input class="search-hotel-form__input-min" type="number" name="min" id="inpt1" value="1000" min="0" max="5000">
             </div>
             <div class="search-hotel-form__container">
               <label for="inpt2" class="search-hotel-form__label">До</label>
-              <input class="search-hotel-form__input-max" type="number" name="max" id="inpt2" value="3000" min="1" max="4000">
+              <input class="search-hotel-form__input-max" type="number" name="max" id="inpt2" value="3000" min="1" max="5000">
             </div>
           </div>
           <div class="range" id="range">
@@ -86,7 +86,7 @@
             <button id='btn1' class="range__button-1" type="button"></button>
             <button id='btn2' class="range__button-2" type="button"></button>
           </div>
-          <input class="search-hotel-form__button" type="submit" value="Показать">
+          <input class="search-hotel-form__button" type="submit" value="Показать" id="form-button">
         </fieldset>
       </form>
     </section>
@@ -100,18 +100,24 @@
       </div>
       <ul class="sorting__list">
         <li class="sorting__description">Сортировка:</li>
-        <li class="sorting__item sorting__item--active">По цене</li>
-        <li class="sorting__item">По типу</li>
-        <li class="sorting__item">По рейтингу</li>
+        <li class="sorting__item">
+          <button type="button" class="sorting__button sorting__button--active" id="byPrice">По цене</button>
+        </li>
+        <li class="sorting__item">
+          <button type="button" class="sorting__button" id="byType">По типу</button>
+        </li>
+        <li class="sorting__item">
+          <button type="button" class="sorting__button" id="byRating">По рейтингу</button>
+        </li>
       </ul>
       <div class="sorting__switches">
-        <button class="switches__button switches__button--up">
-          <svg>
+        <button class="switches__button switches__button--up" id="switchUp">
+          <svg width="11" height="11">
             <polygon points="5.5,0 0,10 11,10" />
           </svg>
         </button>
-        <button class="switches__button switches__button--down switch--active">
-          <svg>
+        <button class="switches__button switches__button--down switch--active" id="switchDown">
+          <svg width="11" height="11">
             <polyline points="5.5,10 0,0 11,0" />
           </svg>
         </button>
@@ -131,7 +137,9 @@
               <h3 class="hotels__title"></h3>
               <div class="hotels__information">
                 <span class="hotels__type"></span>
-                <span class="hotels__min-price"></span>
+                <span class="hotels__min-price">
+                  От <span class="hotels__min-price-number"></span> &#8381;
+                </span>
               </div>
               <div class="hotels__buttons">
                 <a href="#" class="hotels__button-to-about button">Подробнее</a>
@@ -149,7 +157,7 @@
 
   </main>
 
- <footer class="page-footer">
+  <footer class="page-footer">
     <strong class="page-footer__title"><a class="page-footer__title--link" href="https://www.instagram.com/explore/tags/visitsedona/" target="_blank">
         #visitsedona
       </a></strong>
@@ -190,7 +198,9 @@
         HTML Academy</a>
     </div>
   </footer>
-  <script src="js/hotels.js"></script>
   <script src="js/script.js"></script>
   <script src="js/dobleSlider.js"></script>
-</body></html>
+  <script src="js/hotels.js"></script>
+</body>
+
+</html>
