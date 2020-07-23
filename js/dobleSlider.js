@@ -1,10 +1,10 @@
 (function () {
 "use strict";
+
     init2slider('range', 'rangeBetween', 'btn1', 'btn2', 'inpt1', 'inpt2');
 
-    window.onresize = () => {
+    window.onresize = () =>
       init2slider('range', 'rangeBetween', 'btn1', 'btn2', 'inpt1', 'inpt2');
-    };
 
     function init2slider(idX, btwX, btn1X, btn2X, input1, input2) {
       const slider = document.getElementById(idX);
@@ -26,7 +26,7 @@
       inpt1.value = min;
       inpt2.value = max;
 
-      function inputInitiate(evt) {
+      const inputInitiate = evt => {
         if (parseInt(evt.value) < min)
           evt.value = min;
         if (parseInt(evt.value) > max)
@@ -54,16 +54,15 @@
         }
       }
 
-      inpt1.onchange = () => {
+      inpt1.onchange = () =>
         inputInitiate(inpt1);
-      }
-      inpt2.onchange = () => {
+
+      inpt2.onchange = () =>
         inputInitiate(inpt2);
-      }
 
       /*mouse*/
 
-        button1.onmousedown = (evt) => {
+        button1.onmousedown = evt => {
           let sliderCoords = getCoords(slider);
           let betweenCoords = getCoords(between);
           let buttonCoords1 = getCoords(button1);
@@ -71,7 +70,7 @@
           let shiftX2 = evt.pageX - buttonCoords2.left;
           let shiftX1 = evt.pageX - buttonCoords1.left;
 
-          document.onmousemove = (evt) => {
+          document.onmousemove = evt => {
             let left1 = evt.pageX - shiftX1 - sliderCoords.left;
             let right1 = slider.offsetWidth - button1.offsetWidth;
             if (left1 < 0) left1 = 0;
@@ -103,13 +102,14 @@
             inpt2.value = (parseInt(min) + Math.round((max - min) * per_max / 100));
 
           };
-          document.onmouseup = () => {
+
+          document.onmouseup = () =>
             document.onmousemove = document.onmouseup = null;
-          };
+
           return false;
         };
 
-        button2.onmousedown = (evt) => {
+        button2.onmousedown = evt => {
           let sliderCoords = getCoords(slider);
           let betweenCoords = getCoords(between);
           let buttonCoords1 = getCoords(button1);
@@ -117,7 +117,7 @@
           let shiftX2 = evt.pageX - buttonCoords2.left;
           let shiftX1 = evt.pageX - buttonCoords1.left;
 
-          document.onmousemove = (evt) => {
+          document.onmousemove = evt => {
             let left2 = evt.pageX - shiftX2 - sliderCoords.left;
             let right2 = slider.offsetWidth - button2.offsetWidth;
             if (left2 < 0) left2 = 0;
@@ -148,16 +148,9 @@
             inpt2.value = (parseInt(min) + Math.round((max - min) * per_max / 100));
 
           };
-          document.onmouseup = () => {
+          document.onmouseup = () =>
             document.onmousemove = document.onmouseup = null;
-          };
-          return false;
-        };
 
-        button1.ondragstart = () => {
-          return false;
-        };
-        button2.ondragstart = () => {
           return false;
         };
 
@@ -167,7 +160,6 @@
             top: box.top + pageYOffset,
             left: box.left + pageXOffset
           };
-        }
-
-      }
+        };
+      };
     })()

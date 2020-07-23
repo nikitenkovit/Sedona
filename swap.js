@@ -1,18 +1,3 @@
-@font-face {
-  font-family: 'PT Sans';
-  src: url(../fonts/pt-sans.regular.woff) format("woff"), url(../fonts/PTSans-Regular.woff2) format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Sans';
-  src: url(../fonts/pt-sans.bold.woff) format("woff"), url(../fonts/PTSans-Bold.woff2) format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-
 (function () {
   "use strict";
 
@@ -85,10 +70,6 @@
       newPrice.textContent = element.price;
       newStars.textContent = element.stars;
       newRating.textContent = "Рейтинг: " + element.rating;
-      clonedElement.dataset.isPool = element.isPool;
-      clonedElement.dataset.isParking = element.isParking;
-      clonedElement.dataset.isWiFi = element.isWiFi;
-      clonedElement.style.display = "block";
 
       hotelsList.appendChild(clonedElement);
     });
@@ -118,10 +99,9 @@
   const addCheckHandlerForInfrastructure = (item) => {
     item.addEventListener('change', function () {
       removeAllElements();
-      addHotelsOnPage(arrayHotels);
-      checkTypeHotels();
-      checkInfrastructure();
-      checkDoubleRange();
+      addHotelsOnPage(checkInfrastructure());
+
+      //checkDoubleRange();
       checkСounterNumber();
     });
   };
@@ -152,43 +132,28 @@
   const wifiCheckbox = document.getElementById('wi-fi');
 
   const checkInfrastructure = () => {
-    for (let item of allHotelsItems) {
-      let isPoolValue = item.getAttribute('data-is-pool');
-      let isParkingValue = item.getAttribute('data-is-parking');
-      let isWiFilValue = item.getAttribute('data-is-wi-fi');
+    let NewArrayHotels = [];
 
+    NewArrayHotels = arrayHotels.filter((item) => {
       if (poolCheckbox.checked && !parkingChechbox.checked && !wifiCheckbox.checked) {
-        if (isPoolValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isPool;
       } else if (!poolCheckbox.checked && parkingChechbox.checked && !wifiCheckbox.checked) {
-        if (isParkingValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isParking;
       } else if (!poolCheckbox.checked && !parkingChechbox.checked && wifiCheckbox.checked) {
-        if (isWiFilValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isWiFi;
       } else if (poolCheckbox.checked && parkingChechbox.checked && !wifiCheckbox.checked) {
-        if (isPoolValue == "false" || isParkingValue == "false") {
-          item.style.display = "none";
-        };
+        return item.isPool && item.isParking;
       } else if (poolCheckbox.checked && !parkingChechbox.checked && wifiCheckbox.checked) {
-        if (isPoolValue === "false" || isWiFilValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isPool && item.isWiFi;
       } else if (!poolCheckbox.checked && parkingChechbox.checked && wifiCheckbox.checked) {
-        if (isParkingValue === "false" || isWiFilValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isParking && item.isWiFi;
       } else if (poolCheckbox.checked && parkingChechbox.checked && wifiCheckbox.checked) {
-        if (isPoolValue === "false" || isParkingValue === "false" || isWiFilValue === "false") {
-          item.style.display = "none";
-        };
+        return item.isPool && item.isParking && item.isWiFi;
       };
-    };
+    });
+    return NewArrayHotels;
   };
-
+console.log(checkInfrastructure())
   /*checkboxes for check hotel type */
 
   const hotelCheckbox = document.getElementById('hotel');
@@ -227,7 +192,7 @@
     };
   };
 
-  checkInfrastructure();
+
 
   /*Check double range*/
 
@@ -366,8 +331,6 @@
     checkСounterNumber();
   };
 
-  sortingFuncton(checkSwitchesResult(), "price");
+  //sortingFuncton(checkSwitchesResult(), "price");
 
 })()
-
-
