@@ -32,15 +32,15 @@
         if (parseInt(evt.value) > max)
           evt.value = max;
         if (parseInt(inpt1.value) > parseInt(inpt2.value)) {
-          let swap = inpt1.value;
+          const swap = inpt1.value;
           inpt1.value = inpt2.value;
           inpt2.value = swap;
         }
-        let sliderCoords = getCoords(slider);
-        let per1 = parseInt(inpt1.value - min) * 100 / (max - min);
-        let per2 = parseInt(inpt2.value - min) * 100 / (max - min);
-        let left1 = per1 * (slider.offsetWidth - button1.offsetWidth) / 100;
-        let left2 = per2 * (slider.offsetWidth - button1.offsetWidth) / 100;
+        const sliderCoords = getCoords(slider);
+        const per1 = parseInt(inpt1.value - min) * 100 / (max - min);
+        const per2 = parseInt(inpt2.value - min) * 100 / (max - min);
+        const left1 = per1 * (slider.offsetWidth - button1.offsetWidth) / 100;
+        const left2 = per2 * (slider.offsetWidth - button1.offsetWidth) / 100;
 
         button1.style.marginLeft = left1 + 'px';
         button2.style.marginLeft = left2 + 'px';
@@ -63,10 +63,10 @@
       /*mouse*/
 
         button1.onmousedown = evt => {
-          let sliderCoords = getCoords(slider);
-          let betweenCoords = getCoords(between);
-          let buttonCoords1 = getCoords(button1);
-          let buttonCoords2 = getCoords(button2);
+          const sliderCoords = getCoords(slider);
+          const betweenCoords = getCoords(between);
+          const buttonCoords1 = getCoords(button1);
+          const buttonCoords2 = getCoords(button2);
           let shiftX2 = evt.pageX - buttonCoords2.left;
           let shiftX1 = evt.pageX - buttonCoords1.left;
 
@@ -110,10 +110,10 @@
         };
 
         button2.onmousedown = evt => {
-          let sliderCoords = getCoords(slider);
-          let betweenCoords = getCoords(between);
-          let buttonCoords1 = getCoords(button1);
-          let buttonCoords2 = getCoords(button2);
+          const sliderCoords = getCoords(slider);
+          const betweenCoords = getCoords(between);
+          const buttonCoords1 = getCoords(button1);
+          const buttonCoords2 = getCoords(button2);
           let shiftX2 = evt.pageX - buttonCoords2.left;
           let shiftX1 = evt.pageX - buttonCoords1.left;
 
@@ -155,7 +155,7 @@
         };
 
         function getCoords(elem) {
-          let box = elem.getBoundingClientRect();
+          const box = elem.getBoundingClientRect();
           return {
             top: box.top + pageYOffset,
             left: box.left + pageXOffset

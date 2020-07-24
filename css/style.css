@@ -795,7 +795,6 @@ body {
   height: 85px;
   line-height: 84px;
   background-color: #766357;
-  outline: none;
 }
 
 .main-hotels__button:hover,
@@ -2478,6 +2477,7 @@ body {
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .switches__button--up {
@@ -2684,4 +2684,10 @@ body {
   .hotels__stars {
     margin-bottom: auto;
   }
+}
+
+@media (min-width: 1200px) {
+  .hotels__wrapper {
+  padding: 30px 72px;
+}
 }

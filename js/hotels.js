@@ -75,19 +75,13 @@
     });
   };
 
-  addHotelsOnPage(arrayHotels);
+  //addHotelsOnPage(arrayHotels);
 
   const allHotelsItems = hotelsList.children;
 
   const removeAllElements = () => {
-    for (let elem of allHotelsItems) {
-      elem.remove();
-    };
-    for (let elem of allHotelsItems) {
-      elem.remove();
-    };
-    for (let elem of allHotelsItems) {
-      elem.remove();
+    while (hotelsList.firstChild) {
+      hotelsList.firstChild.remove();
     };
   };
 
@@ -307,6 +301,8 @@
     checkDoubleRange();
     checkСounterNumber();
   };
+
+  /*initiate*/
 
   sortingFuncton('price', checkSwitchesResult());
 
