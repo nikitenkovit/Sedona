@@ -1,0 +1,51 @@
+.main-hotels {
+  background-color: #ffffff;
+  text-align: center;
+  line-height: 24px;
+}
+
+.main-hotels__title {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 24px;
+  @include font-settings(21px, 26px, 700, #000000);
+}
+
+.main-hotels__description {
+  width: 265px;
+  margin: 0 auto;
+  padding-bottom: 37px;
+}
+
+.main-hotels__button {
+  width: 100%;
+  height: 85px;
+  line-height: 84px;
+  background-color: $hotels-color-buttons;
+
+  &:focus,
+  &:hover {
+    background-color: $hotels-color-buttons-hover;
+  }
+
+  &:active {
+    background-color: $hotels-color-buttons-active;
+  }
+}
+@media (min-width: $laptop-size) {
+  .main-hotels__title {
+    padding-top: 55px;
+    padding-bottom: 35px;
+    font-size: 30px;
+  }
+
+  .main-hotels__description {
+    width: 435px;
+    margin: 0 auto;
+    padding-bottom: 44px;
+  }
+
+  .main-hotels__button {
+    width: 568px;
+  }
+}

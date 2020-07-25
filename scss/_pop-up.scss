@@ -1,15 +1,13 @@
-/*pop-up*/
-
 .pop-up__wrapper {
   position: fixed;
   display: none;
   align-items: center;
   justify-content: center;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .pop-up--show {
@@ -27,7 +25,7 @@
   padding-bottom: 20px;
   text-align: center;
   box-sizing: border-box;
-  box-shadow: 0 0 15px 1px rgba(0, 1, 1, 0.4);
+  box-shadow: $secondary-shadow;
   background-color: #ffffff;
 }
 
@@ -38,34 +36,26 @@
   padding-bottom: 0;
 }
 
-
 .pop-up__title {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  line-height: 26px;
+  @include font-settings(18px, 26px, 700, #000000);
 }
 
 .pop-up__description {
-  margin: 0;
-  padding: 0;
   width: 215px;
-  font-size: 14px;
-  line-height: 24px;
+  @include font-settings(14px, 24px, 400, #333333);
 }
 
-.pop-up__button {
-  margin: 0;
-  padding: 0;
+.pop-up--failure {
+  .pop-up__button {
+    width: 180px;
+  }
 }
 
-.pop-up--failure .pop-up__button {
-  width: 180px;
-}
-
-.pop-up--success .pop-up__button {
-  width: 280px;
-  margin: auto;
+.pop-up--success {
+  .pop-up__button {
+    width: 280px;
+    margin: auto;
+  }
 }
 
 .pop-up__container {
@@ -74,8 +64,7 @@
   height: 100px;
   background-color: #f2f2f2;
 }
-
-@media (min-width: 768px) {
+@media (min-width: $laptop-size) {
   .pop-up {
     width: 400px;
     height: 350px;
@@ -95,16 +84,20 @@
     line-height: 40px;
   }
 
-  .pop-up--success .pop-up__title {
-    width: auto;
+  .pop-up--success {
+    .pop-up__title {
+      width: auto;
+    }
   }
 
   .pop-up__description {
     width: 280px;
   }
 
-  .pop-up--success .pop-up__description {
-    width: 420px;
+  .pop-up--success {
+    .pop-up__description {
+      width: 420px;
+    }
   }
 
   .pop-up--failure .pop-up__button {

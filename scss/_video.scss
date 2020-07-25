@@ -1,12 +1,6 @@
-/*video*/
-
 .video__title {
-  margin: 0;
-  padding: 0;
   padding-top: 35px;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
+  @include font-settings(18px, 26px, 700, #000000);
   text-align: center;
 }
 
@@ -14,7 +8,6 @@
   width: 74.3%;
   margin: 0 auto;
   margin-top: 30px;
-  padding: 0;
   text-align: center;
 }
 
@@ -28,11 +21,9 @@
   display: block;
   width: 100%;
   height: auto;
-  margin: 0;
-  padding: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $laptop-size) {
   .video__title {
     padding-top: 65px;
     font-size: 30px;
@@ -50,7 +41,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-size) {
   .video__container {
     width: 800px;
   }

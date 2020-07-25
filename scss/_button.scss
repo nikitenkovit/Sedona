@@ -1,0 +1,21 @@
+.button {
+  display: block;
+  width: 280px;
+  min-height: 57px;
+  margin: 0 auto;
+  border: none;
+  @include font-settings(21px, 58px, 700, #ffffff);
+  text-align: center;
+  background-color: $primary-color;
+  cursor: pointer;
+  transition: background-color .2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-color;
+  }
+  &:active {
+    background-color: $active-color;
+    color: $font-color-active;
+  }
+}

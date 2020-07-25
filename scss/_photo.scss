@@ -1,23 +1,17 @@
-/*photo.html*/
-
 .photo-page-main {
   font-size: 14px;
   line-height: 24px;
 }
 
-/*photo*/
-
 .photo__list {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 .photo__item {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid $hover-input-color;
+  border-bottom: 1px solid $hover-input-color;
 }
 
 .photo__wrapper {
@@ -29,8 +23,6 @@
   display: block;
   width: 100%;
   height: auto;
-  margin: 0;
-  padding: 0;
   padding-top: 22px;
 }
 
@@ -42,25 +34,19 @@
 }
 
 .photo__description {
-  margin: 0;
   margin-top: 17px;
-  padding: 0;
   font-weight: 700;
   color: #000000;
 }
 
 .photo__author {
-  margin: 0;
-  padding: 0;
   text-transform: none;
 }
 
 .thumbs-up-button {
   width: 70px;
   height: 25px;
-  margin: 0;
   margin-top: 5px;
-  padding: 0;
   border: none;
   background-color: transparent;
   background-image: url("../img/like-icon-mobile.svg");
@@ -71,19 +57,15 @@
 }
 
 .thumbs-up-button--added {
-  background-image: url("../img/like-icon-positive-mobile.svg")
+  background-image: url("../img/like-icon-positive-mobile.svg");
 }
 
 .thumbs-up-button__likes-number {
-  margin: 0;
-  padding: 0;
   padding-left: 35px;
   font-weight: 700;
   color: #000000;
 }
-
-@media (min-width: 768px) {
-
+@media (min-width: $laptop-size) {
   .photo__list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -115,21 +97,21 @@
     height: 80px;
     padding: 0 20px;
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    background-color: $primary-input-color;
   }
 
-  .photo__item:nth-child(n+3) .photo__container {
-    background-color: #eaeaea;
+  .photo__item:nth-child(n+3) {
+    .photo__container {
+      background-color: #eaeaea;
+    }
   }
 
   .thumbs-up-button {
-    margin: auto;
-    margin-right: 0;
+    margin: auto 0 auto auto;
     background-position: 0 0;
   }
 }
-
-@media (min-width: 1200px) {
+@media (min-width: $desktop-size) {
   .photo__list {
     width: 100%;
   }
@@ -163,14 +145,16 @@
   }
 
   .thumbs-up-button--added {
-    background-image: url("../img/like-icon-positive-desctop.svg")
+    background-image: url("../img/like-icon-positive-desctop.svg");
   }
 
   .thumbs-up-button__likes-number {
     color: #ffffff;
   }
 
-  .photo__item:nth-child(n+3) .photo__container {
-    background-color: rgba(0, 0, 0, 0.3);
+  .photo__item:nth-child(n+3) {
+    .photo__container {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 }

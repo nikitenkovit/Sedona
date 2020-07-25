@@ -1,10 +1,9 @@
-(function () {
+(function() {
   "use strict";
 
   /*Add hotels on page*/
 
-  let arrayHotels = [
-    {
+  let arrayHotels = [{
       title: 'Desert quail inn',
       type: 'мотель',
       price: 4000,
@@ -14,7 +13,7 @@
       isPool: false,
       isParking: true,
       isWiFi: true
-  },
+    },
     {
       title: 'Amara resort \u0026 spa',
       type: 'гостиница',
@@ -25,7 +24,7 @@
       isPool: true,
       isParking: true,
       isWiFi: true
-  },
+    },
     {
       title: 'Villas at poco diablo',
       type: 'апартаменты',
@@ -36,7 +35,7 @@
       isPool: false,
       isParking: true,
       isWiFi: false
-  },
+    },
     {
       title: 'Sugar Loaf Lodge',
       type: 'мотель',
@@ -47,8 +46,8 @@
       isPool: true,
       isParking: false,
       isWiFi: true
-  }
-];
+    }
+  ];
 
   const hotelsList = document.getElementById('hotels__list');
   const templateContent = document.getElementById('template-data').content;
@@ -96,7 +95,7 @@
   const apartmentsCheckbox = document.getElementById('apartments');
 
   const addCheckboxHandler = item => {
-    item.addEventListener('change', function () {
+    item.addEventListener('change', function() {
       removeAllElements();
       addHotelsOnPage(checkInfrastructure(arrayHotels));
       checkTypeHotels();

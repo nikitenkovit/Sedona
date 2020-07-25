@@ -1,5 +1,3 @@
-/*intro*/
-
 .intro {
   min-width: 320px;
   height: 390px
@@ -40,9 +38,9 @@
   padding-top: 50px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $laptop-size) {
   .intro {
-    min-width: 768px;
+    min-width: $laptop-size;
     height: 518px
   }
 
@@ -74,9 +72,9 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-size) {
   .intro {
-    width: 1200px;
+    width: $desktop-size;
   }
 
   .photo-page-main .intro,

@@ -1,0 +1,8 @@
+@mixin font-settings($size:14px, $height:26px, $weight:700, $color: #333333) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  text-transform: uppercase;
+  color: $color;
+  text-decoration: none;
+}

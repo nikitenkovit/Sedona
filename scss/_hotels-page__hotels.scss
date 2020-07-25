@@ -1,0 +1,157 @@
+/*hotels*/
+.hotels__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hotels__item {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.hotels__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 45px;
+}
+
+.hotels__title {
+  margin: 0;
+  margin-top: 23px;
+  padding: 0;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.hotels__information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hotels__buttons {
+  width: 100%
+}
+
+.hotels__button-to-about {
+  width: 100%;
+  min-height: 27px;
+  height: 27px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 27px;
+}
+
+.hotels__button-to-reserve {
+  width: 100%;
+  min-height: 27px;
+  height: 27px;
+  font-size: 14px;
+  line-height: 27px;
+  background-color: #766357;
+}
+
+.hotels__button-to-reserve:hover,
+.hotels__button-to-reserve:focus {
+  background-color: #604e43;
+}
+
+.hotels__button-to-reserve:active {
+  background-color: #503e33;
+}
+
+.hotels__rating {
+  text-align: center;
+}
+
+.hotels__stars {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  color: #81b3d2;
+}
+
+.hotels__rating-number {
+  width: 111px;
+  height: 27px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+@media (min-width: 768px) {
+  .hotels__item {
+    height: 150px;
+  }
+
+  .hotels__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hotels__image {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hotels__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+    margin-left: 30px;
+  }
+
+  .hotels__title {
+    margin: 0;
+  }
+
+  .hotels__information {
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+  }
+
+  .hotels__buttons {
+    width: 263px;
+  }
+
+  .hotels__button-to-about {
+    display: inline-block;
+    width: 111px;
+    margin: 0;
+    padding: 0;
+    margin-right: 2px;
+  }
+
+  .hotels__button-to-reserve {
+    display: inline-block;
+    width: 142px;
+  }
+
+  .hotels__rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 153px;
+    height: 90px;
+    margin-left: auto;
+  }
+
+  .hotels__stars {
+    margin-bottom: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hotels__wrapper {
+    padding: 30px 72px;
+  }
+}
