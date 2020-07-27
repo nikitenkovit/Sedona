@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --output-style -o css scss",
-    "serve": "browser-sync start --server --files 'css/*.css, **/*.html'",
+    "scss": "node-sass --output-style compressed -o css scss",
+    "serve": "browser-sync start --server --files 'css/*.css, **/*.html, js/*.js'",
     "watch:css": "onchange 'scss' -- npm run scss",
     "start": "run-p serve watch:css"
   },

@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Сайт об городе Седона в штате Аризона. Сайт про путешествия.">
+  <meta name="keywords" content="путешествия, город Седона, Аризона США">
   <title>Sedona</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -65,9 +68,9 @@
           </div>
 
           <picture>
-            <source media="(min-width: 1200px)" srcset="img/photo-city-desctop.jpg">
-            <source media="(min-width: 768px)" srcset="img/photo-city.jpg">
-            <img class="advantages__image" src="img/photo-city@1x.jpg" alt="фотография города">
+            <source media="(min-width: 1200px)" srcset="img/photo-city-desctop@1x.jpg 1x, img/photo-city-desctop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/photo-city-laptop@1x.jpg 1x, img/photo-city-laptop@2x.jpg 2x">
+            <img class="advantages__image" src="img/photo-city-mobile@1x.jpg" srcset="img/photo-city-mobile@2x.jpg 2x" alt="фотография города">
           </picture>
 
           <ul class="first-reason__list">
@@ -96,9 +99,9 @@
           </div>
 
           <picture>
-            <source media="(min-width: 1200px)" srcset="img/photo-bridge-desctop.jpg">
-            <source media="(min-width: 768px)" srcset="img/photo-bridge.jpg">
-            <img class="advantages__image" src="img/photo-bridge@1x.jpg" alt="фотография города">
+            <source media="(min-width: 1200px)" srcset="img/photo-bridge-desctop@1x.jpg 1x, img/photo-bridge-desctop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/photo-bridge-laptop@1x.jpg 1x, img/photo-bridge-laptop@2x.jpg 2x">
+            <img class="advantages__image" src="img/photo-bridge-mobile@1x.jpg" srcset="img/photo-bridge-mobile@2x.jpg 2x" alt="фотография города">
           </picture>
 
         </li>
@@ -161,7 +164,7 @@
                 <div class="search-form__adult">
                   <button type="button" id="adult-minus" class="search-form__button--minus">
                   </button>
-                  <input id="adult" class="search-form__counter field counter" type="text" value="0">
+                  <input id="adult" class="search-form__counter field counter" type="text" value="2">
                   <button type="button" id="adult-plus" class="search-form__button--plus">
                   </button>
                 </div>

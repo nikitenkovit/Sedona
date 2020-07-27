@@ -53,3 +53,12 @@ body, ul, ol, li, h1, h2, h3, p, button, section, nav, header, footer, main, img
   margin: 0;
   padding: 0;
 }
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}

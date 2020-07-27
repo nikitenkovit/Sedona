@@ -14,19 +14,36 @@
   font-size: 0;
   border: none;
   background-color: transparent;
-  fill: $primary-color;
   outline: none;
   cursor: pointer;
 }
 
 .main-nav__button-close {
   position: absolute;
-  width: 23px;
-  height: 22px;
+  width: 27px;
+  height: 26px;
   top: 17px;
   right: 20px;
   cursor: pointer;
-  background: url("../img/icon-close.png") no-repeat 50% 50%;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -2px;
+    width: 27px;
+    height: 4px;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .main-nav__list {
@@ -107,7 +124,17 @@
   bottom: 17px;
   right: 20px;
   cursor: pointer;
-  background: url("../img/icon-menu.png") no-repeat 50% 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 23px;
+    height: 4px;
+    background-color: $primary-color;
+    box-shadow: 0 8px 0 0 $primary-color, 0 16px 0 0 $primary-color,;
+  }
 }
 @media (min-width: $laptop-size) {
   .main-nav {
@@ -145,11 +172,13 @@
     line-height: 55px;
     font-weight: 700;
     color: #000000;
+
     &:focus,
     &:hover {
       background-color: #ffffff;
       color: $primary-color;
     }
+
     &:active {
       background-color: #ffffff;
       color: #b2b2b2;
@@ -158,11 +187,13 @@
 
   .main-nav__link--active {
     color: $hotels-color-buttons;
+
     &:focus,
     &:hover {
       background-color: #ffffff;
       color: #604e43;
     }
+
     &:active {
       background-color: #ffffff;
       color: #d6d0cc;
@@ -173,7 +204,6 @@
     display: none;
   }
 }
-
 @media (min-width: $desktop-size) {
   .page-header {
     width: $desktop-size;

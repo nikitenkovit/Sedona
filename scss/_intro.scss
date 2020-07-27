@@ -12,10 +12,17 @@
   height: 100%;
   background-color: black;
   background-image: url("../img/intro-triangle.svg"),
-    url("../img/back-desktop.jpg");
+    url("../img/back-mobile.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, 50% 50%;
   background-size: 200%, cover;
+}
+
+@media (min-resolution: 1.5dppx) {
+  .intro__slogan {
+    background-image: url("../img/intro-triangle.svg"),
+      url("../img/back-mobile@2x.jpg");
+  }
 }
 
 .photo-page-main .intro__slogan,
@@ -38,6 +45,25 @@
   padding-top: 50px;
 }
 
+@media (min-width: 480px) {
+  .intro__slogan {
+    background-image: url("../img/intro-triangle.svg"),
+      url("../img/back-desktop@1x.jpg");
+      background-position: bottom, 50% 37%;
+      background-size: 100%, cover;
+  }
+  .photo-page-main .intro__slogan,
+  .form-page-main .intro__slogan {
+    background-position: bottom, 50% 60%;
+  }
+  @media (min-resolution: 1.5dppx) {
+    .intro__slogan {
+      background-image: url("../img/intro-triangle.svg"),
+        url("../img/back-desktop@2x.jpg");
+    }
+  }
+}
+
 @media (min-width: $laptop-size) {
   .intro {
     min-width: $laptop-size;
@@ -49,13 +75,9 @@
     height: 290px;
   }
 
-  .intro__slogan {
-    background-size: 100%, cover;
-  }
-
   .photo-page-main .intro__slogan,
   .form-page-main .intro__slogan {
-    background-size: 100%, auto;
+    background-size: 100%, cover;
   }
 
   .intro__slogan--image {

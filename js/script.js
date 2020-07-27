@@ -10,7 +10,7 @@
   const searchForm = document.querySelector(".search-form")
 
   openButton.onclick = () =>
-    navLists.forEach(item => item.classList.add("show"));
+    navLists.forEach(item => item.classList.toggle("show"));
 
   closeButton.onclick = () =>
     navLists.forEach(item => item.classList.remove("show"));

@@ -105,6 +105,7 @@
 
 .search-form__button--minus,
 .search-form__button--plus {
+  position: relative;
   width: 40px;
   height: 40px;
   border: none;
@@ -114,42 +115,58 @@
 }
 
 .search-form__button--minus {
-  background-image: url("../img/icon-minus.png");
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &:focus,
-  &:hover {
-    background-image: url("../img/icon-minus-hover.png");
+  &::before {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    width: 14px;
+    height: 3px;
+    background-color: #a9a9a9;
+  }
+  &:focus::before,
+  &:hover::before {
+    background-color: #000000;
   }
 
-  &:active {
-    background-image: url("../img/icon-minus-active.png");
+  &:active::before {
+    background-color: $primary-color;
   }
 }
 
 .search-form__button--plus {
-  background-image: url("../img/icon-plus.png");
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &:focus,
-  &:hover {
-    background-image: url("../img/icon-plus-hover.png");
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: 13px;
+    width: 14px;
+    height: 3px;
+    background-color: #a9a9a9;
+  }
+  &::after {
+    transform: rotate(90deg);
+  }
+  &:focus::before,
+  &:focus::after,
+  &:hover::before,
+  &:hover::after {
+    background-color: #000000;
   }
 
-  &:active {
-    background-image: url("../img/icon-plus-active.png");
+  &:active::before,
+  &:active::after {
+    background-color: $primary-color;
   }
 }
 
 .search-form__counter {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   text-align: center;
   border: 2px solid $primary-input-color;
   background-color: $primary-input-color;
-  box-sizing: border-box;
   outline: none;
   transition: background-color 0.2s ease-out;
 
