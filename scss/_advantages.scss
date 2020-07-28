@@ -8,7 +8,9 @@
   color: #ffffff;
 }
 
-.advantages__item:nth-child(n+3) {
+.advantages__item--fifth-reason,
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
   background-color: #eeeeee;
 }
 
@@ -50,9 +52,20 @@
   }
 }
 
-.advantages__item:nth-child(n+3) .advantages__number::after,
-.advantages__item:nth-child(n+3) .advantages__number::before {
-  background-color: $primary-font-color;
+.advantages__item--fifth-reason,
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
+  .advantages__number::after {
+    background-color: $primary-font-color;
+  }
+}
+
+.advantages__item--fifth-reason,
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
+  .advantages__number::before {
+    background-color: $primary-font-color;
+  }
 }
 
 .advantages__description {
@@ -65,27 +78,34 @@
   height: auto;
 }
 
-.advantages__item:nth-child(n+3) {
+.advantages__item--fifth-reason,
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
   .advantages__title {
     padding-top: 27px;
     color: #000000;
   }
 }
 
-.advantages__item:nth-child(n+3) {
+.advantages__item--fifth-reason,
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
   .advantages__description {
     padding: 0 5px 25px;
   }
 }
 
-.advantages__item:nth-child(n+3):not(:last-child) {
+.advantages__item--fourth-reason,
+.advantages__item--third-reason {
   .advantages__description {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
-.advantages__item--first-reason .advantages__title {
-  padding-top: 60px;
+.advantages__item--first-reason {
+  .advantages__title {
+    padding-top: 60px;
+  }
 }
 
 .advantages__item--first-reason::before {
@@ -193,11 +213,15 @@
     }
   }
 
-  .advantages__item:nth-child(n+3) {
+  .advantages__item--fifth-reason,
+  .advantages__item--fourth-reason,
+  .advantages__item--third-reason {
     flex-grow: 1;
   }
 
-  .advantages__item:nth-child(n+3) {
+  .advantages__item--fifth-reason,
+  .advantages__item--fourth-reason,
+  .advantages__item--third-reason {
     .advantages__title {
       padding-top: 45px;
     }
@@ -213,7 +237,8 @@
     padding-bottom: 0;
   }
 
-  .advantages__item:nth-child(n+3):not(:last-child) {
+  .advantages__item--fourth-reason,
+  .advantages__item--third-reason {
     .advantages__description {
       padding-bottom: 0;
       border: none;
@@ -303,7 +328,6 @@
     }
   }
 }
-
 @media (min-width: $desktop-size) {
   .advantages {
     max-width: $desktop-size;
