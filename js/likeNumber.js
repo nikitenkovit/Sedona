@@ -9,5 +9,5 @@
       (thumbsUpButtons[i].classList.contains("thumbs-up-button--added")) ? likesNumbers[i].textContent--: likesNumbers[i].textContent++;
       thumbsUpButtons[i].classList.toggle("thumbs-up-button--added");
     };
-  };
+  }
 })()

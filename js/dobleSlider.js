@@ -19,7 +19,6 @@
 
       /*initiate*/
 
-      const sliderCoords = getCoords(slider);
       button1.style.marginLeft = '0px';
       button2.style.marginLeft = (slider.offsetWidth - button1.offsetWidth) + 'px';
       between.style.width = (slider.offsetWidth - button1.offsetWidth) + 'px';
@@ -36,7 +35,7 @@
           inpt1.value = inpt2.value;
           inpt2.value = swap;
         }
-        const sliderCoords = getCoords(slider);
+
         const per1 = parseInt(inpt1.value - min) * 100 / (max - min);
         const per2 = parseInt(inpt2.value - min) * 100 / (max - min);
         const left1 = per1 * (slider.offsetWidth - button1.offsetWidth) / 100;
@@ -64,7 +63,6 @@
 
         button1.onmousedown = evt => {
           const sliderCoords = getCoords(slider);
-          const betweenCoords = getCoords(between);
           const buttonCoords1 = getCoords(button1);
           const buttonCoords2 = getCoords(button2);
           let shiftX2 = evt.pageX - buttonCoords2.left;
@@ -111,7 +109,6 @@
 
         button2.onmousedown = evt => {
           const sliderCoords = getCoords(slider);
-          const betweenCoords = getCoords(between);
           const buttonCoords1 = getCoords(button1);
           const buttonCoords2 = getCoords(button2);
           let shiftX2 = evt.pageX - buttonCoords2.left;
@@ -160,6 +157,6 @@
             top: box.top + pageYOffset,
             left: box.left + pageXOffset
           };
-        };
-      };
+        }
+      }
     })()

@@ -4,48 +4,48 @@
   /*Add hotels on page*/
 
   let arrayHotels = [{
-      title: 'Desert quail inn',
-      type: 'мотель',
-      price: 4000,
-      imgUrl: 'img/hotels/quail-inn.jpg',
-      stars: '\u2605\u2605\u2605',
-      rating: 8.9,
-      isPool: false,
-      isParking: true,
-      isWiFi: true
+      "title": 'Desert quail inn',
+      "type": 'мотель',
+      "price": 4000,
+      "imgUrl": 'img/hotels/quail-inn.jpg',
+      "stars": '\u2605\u2605\u2605',
+      "rating": 8.9,
+      "isPool": false,
+      "isParking": true,
+      "isWiFi": true
     },
     {
-      title: 'Amara resort \u0026 spa',
-      type: 'гостиница',
-      price: 5000,
-      imgUrl: 'img/hotels/amara-resort.jpg',
-      stars: '\u2605\u2605\u2605\u2605',
-      rating: 8.5,
-      isPool: true,
-      isParking: true,
-      isWiFi: true
+      "title": 'Amara resort \u0026 spa',
+      "type": 'гостиница',
+      "price": 5000,
+      "imgUrl": 'img/hotels/amara-resort.jpg',
+      "stars": '\u2605\u2605\u2605\u2605',
+      "rating": 8.5,
+      "isPool": true,
+      "isParking": true,
+      "isWiFi": true
     },
     {
-      title: 'Villas at poco diablo',
-      type: 'апартаменты',
-      price: 3000,
-      imgUrl: 'img/hotels/poco-diablo.jpg',
-      stars: '\u2605\u2605',
-      rating: 9.2,
-      isPool: false,
-      isParking: true,
-      isWiFi: false
+      "title": 'Villas at poco diablo',
+      "type": 'апартаменты',
+      "price": 3000,
+      "imgUrl": 'img/hotels/poco-diablo.jpg',
+      "stars": '\u2605\u2605',
+      "rating": 9.2,
+      "isPool": false,
+      "isParking": true,
+      "isWiFi": false
     },
     {
-      title: 'Sugar Loaf Lodge',
-      type: 'мотель',
-      price: 2000,
-      imgUrl: 'img/hotels/Sugar-Loaf-Lodge.jpg',
-      stars: '\u2605\u2605',
-      rating: 8.9,
-      isPool: true,
-      isParking: false,
-      isWiFi: true
+      "title": 'Sugar Loaf Lodge',
+      "type": 'мотель',
+      "price": 2000,
+      "imgUrl": 'img/hotels/Sugar-Loaf-Lodge.jpg',
+      "stars": '\u2605\u2605',
+      "rating": 8.9,
+      "isPool": true,
+      "isParking": false,
+      "isWiFi": true
     }
   ];
 
@@ -74,14 +74,12 @@
     });
   };
 
-  //addHotelsOnPage(arrayHotels);
+  /*hotel collection creation and deletion function*/
 
   const allHotelsItems = hotelsList.children;
 
   const removeAllElements = () => {
-    while (hotelsList.firstChild) {
-      hotelsList.firstChild.remove();
-    };
+    hotelsList.innerHTML = "";
   };
 
   /*checkboxes*/
@@ -100,7 +98,7 @@
       addHotelsOnPage(checkInfrastructure(arrayHotels));
       checkTypeHotels();
       checkDoubleRange();
-      checkСounterNumber();
+      checkCounterNumber();
     });
   };
 
@@ -111,9 +109,7 @@
 
   const checkInfrastructure = array => {
 
-    let NewArrayHotels = [];
-
-    NewArrayHotels = array.filter(item => {
+    let NewArrayHotels = array.filter(item => {
 
       if (poolCheckbox.checked && !parkingChechbox.checked && !wifiCheckbox.checked) {
         return item.isPool;
@@ -129,7 +125,7 @@
         return item.isParking && item.isWiFi;
       } else if (poolCheckbox.checked && parkingChechbox.checked && wifiCheckbox.checked) {
         return item.isPool && item.isParking && item.isWiFi;
-      };
+      }
     });
 
     if (!poolCheckbox.checked && !parkingChechbox.checked && !wifiCheckbox.checked) {
@@ -147,11 +143,11 @@
       if (hotelCheckbox.checked && !motelCheckbox.checked && !apartmentsCheckbox.checked) {
         if (hotelsType.textContent !== 'гостиница') {
           item.remove();
-        };
+        }
       } else if (!hotelCheckbox.checked && motelCheckbox.checked && !apartmentsCheckbox.checked) {
         if (hotelsType.textContent !== 'мотель') {
           item.remove();
-        };
+        }
       } else if (!hotelCheckbox.checked && !motelCheckbox.checked && apartmentsCheckbox.checked) {
         if (hotelsType.textContent !== 'апартаменты') {
           item.remove();
@@ -159,17 +155,17 @@
       } else if (hotelCheckbox.checked && motelCheckbox.checked && !apartmentsCheckbox.checked) {
         if (hotelsType.textContent === 'апартаменты') {
           item.remove();
-        };
+        }
       } else if (hotelCheckbox.checked && !motelCheckbox.checked && apartmentsCheckbox.checked) {
         if (hotelsType.textContent === 'мотель') {
           item.remove();
-        };
+        }
       } else if (!hotelCheckbox.checked && motelCheckbox.checked && apartmentsCheckbox.checked) {
         if (hotelsType.textContent === 'гостиница') {
           item.remove();
-        };
-      };
-    };
+        }
+      }
+    }
   };
 
   /*Check double range*/
@@ -184,15 +180,15 @@
       let swap = minPrice;
       minPrice = maxPrice;
       maxPrice = swap;
-    };
+    }
 
     for (let item of allHotelsItems) {
       let hotelPrice = item.querySelector('.hotels__min-price-number').textContent;
       let price = parseInt(hotelPrice, 10);
       if (price < minPrice || price > maxPrice) {
         item.remove();
-      };
-    };
+      }
+    }
   };
 
   searchHotelForm.onsubmit = evt => {
@@ -201,12 +197,12 @@
     addHotelsOnPage(checkInfrastructure(arrayHotels));
     checkTypeHotels();
     checkDoubleRange();
-    checkСounterNumber();
+    checkCounterNumber();
   };
 
   /*check quantity hotels*/
 
-  const checkСounterNumber = () => {
+  const checkCounterNumber = () => {
     const counterNumber = document.getElementById('counter__number');
     counterNumber.textContent = allHotelsItems.length;
   }
@@ -229,18 +225,18 @@
 
         if (elem.classList.contains('switch--active')) {
           elem.classList.remove('switch--active');
-        };
+        }
       });
       item.classList.add('switch--active');
       if (byPrice.classList.contains('sorting__button--active')) {
         sortingFuncton('price', checkSwitchesResult());
-      };
+      }
       if (byType.classList.contains('sorting__button--active')) {
         sortingFuncton('type', checkSwitchesResult());
-      };
+      }
       if (byRating.classList.contains('sorting__button--active')) {
         sortingFuncton('rating', checkSwitchesResult());
-      };
+      }
     };
   };
 
@@ -260,49 +256,47 @@
       allSortingButton.forEach((elem) => {
         if (elem.classList.contains('sorting__button--active')) {
           elem.classList.remove('sorting__button--active');
-        };
+        }
       });
       item.classList.add('sorting__button--active');
 
       if (item.classList.contains('sorting__button--active')) {
         if (item.textContent === 'По цене') {
           sortingFuncton('price', checkSwitchesResult());
-        };
+        }
         if (item.textContent === 'По типу') {
           sortingFuncton('type', checkSwitchesResult());
-        };
+        }
         if (item.textContent === 'По рейтингу') {
           sortingFuncton('rating', checkSwitchesResult());
-        };
-      };
+        }
+      }
     };
   };
 
   allSortingButton.forEach(item => addHandlerForCheckButton(item));
 
   const sortingFuncton = (from, switcher) => {
-    let sortedArrayHotels = [];
-    sortedArrayHotels = arrayHotels.sort((a, b) => {
-      if (switcher == 'down') {
+    let sortedArrayHotels = arrayHotels.sort((a, b) => {
+      if (switcher === 'down') {
         if (a[from] > b[from]) return -1;
         if (a[from] < b[from]) return 1;
         if (a[from] === b[from]) return 0;
-      };
-      if (switcher == 'up') {
+      }
+      if (switcher === 'up') {
         if (a[from] > b[from]) return 1;
         if (a[from] < b[from]) return -1;
         if (a[from] === b[from]) return 0;
-      };
+      }
     });
     removeAllElements();
     addHotelsOnPage(checkInfrastructure(sortedArrayHotels));
     checkTypeHotels();
     checkDoubleRange();
-    checkСounterNumber();
+    checkCounterNumber();
   };
 
   /*initiate*/
 
   sortingFuncton('price', checkSwitchesResult());
-
 })()

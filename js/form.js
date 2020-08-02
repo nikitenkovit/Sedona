@@ -6,7 +6,6 @@
   const popUpSuccess = document.getElementById("success");
   const popUpFailure = document.getElementById("failure");
   const popUps = document.querySelectorAll(".pop-up__wrapper");
-  const popUpButtons = document.querySelectorAll(".pop-up__button");
   const telNumber = document.getElementById("tel");
 
   //simple form validation
@@ -43,7 +42,7 @@
       evt.preventDefault();
     } else {
       popUpSuccess.classList.add("pop-up--show");
-    };
+    }
   };
 
   //Pop-ups hidden
@@ -89,14 +88,14 @@
         return /[_\d]/.test(a) && count < val.length ? val.charAt(count++) : count >= val.length ? "" : a
       });
       if (event.type == "blur") {
-        if (this.value.length == 2) this.value = ""
+        if (this.value.length === 2) this.value = ""
       } else setCursorPosition(this.value.length, this)
-    };
+    }
 
     if (telNumber) {
       telNumber.addEventListener("input", mask, false);
       telNumber.addEventListener("focus", mask, false);
       telNumber.addEventListener("blur", mask, false);
-    };
+    }
   });
 })()

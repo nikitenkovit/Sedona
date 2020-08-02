@@ -34,7 +34,7 @@
     buttonMinus.onclick = () => {
       if (counter.value > 0) {
         counter.value--;
-      };
+      }
     };
     buttonPlus.onclick = () => {
       counter.value++;
@@ -46,5 +46,5 @@
   }
   if (counterKids) {
     changeCounter(buttonMinusKids, buttonPlusKids, counterKids);
-  };
+  }
 })()
