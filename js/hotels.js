@@ -93,7 +93,7 @@
   const apartmentsCheckbox = document.getElementById('apartments');
 
   const addCheckboxHandler = item => {
-    item.addEventListener('change', function() {
+    item.addEventListener('change', () => {
       removeAllElements();
       addHotelsOnPage(checkInfrastructure(arrayHotels));
       checkTypeHotels();
