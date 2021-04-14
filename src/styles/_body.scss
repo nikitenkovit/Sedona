@@ -1,0 +1,25 @@
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "PT Sans", "Georgia", serif;
+  @include font-settings(14px, 26px, 400);
+  background-color: #ffffff;
+}
+
+@media (min-width: $laptop-size) {
+  body {
+    min-width: $laptop-size;
+  }
+}
+
+@media (min-width: $desktop-size) {
+  html {
+    width: $desktop-size;
+    margin: 0 auto;
+  }
+
+  body {
+    width: $desktop-size;
+    box-shadow: $primary-shadow;
+  }
+}

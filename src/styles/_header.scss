@@ -1,0 +1,220 @@
+.page-header {
+  position: relative;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.main-nav__button {
+  width: 23px;
+  height: 22px;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.main-nav__button-close {
+  position: absolute;
+  width: 27px;
+  height: 26px;
+  top: 17px;
+  right: 20px;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -2px;
+    width: 27px;
+    height: 4px;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav__list {
+  height: 0;
+  list-style: none;
+  background-color: $primary-color;
+  overflow: hidden;
+  transition: height ease-out 0.3s;
+}
+
+.show {
+  height: 115px;
+}
+
+.main-nav__item {
+  border-top: 1px solid #9ac2db;
+  border-bottom: 1px solid #678fa8;
+}
+
+.main-nav__list--left {
+  .main-nav__item:first-child {
+    border-top: none;
+  }
+}
+
+.main-nav__list--right {
+  .main-nav__item:last-child {
+    position: relative;
+    border-bottom: none;
+    overflow: hidden;
+  }
+}
+
+.main-nav__list--right {
+  .main-nav__item:last-child::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px 5px rgba(0, 1, 1, 0.5);
+  }
+}
+
+.main-nav__link {
+  display: block;
+  box-sizing: border-box;
+  min-height: 56px;
+  font-size: 18px;
+  line-height: 54px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+
+  &:focus,
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+    color: $font-color-active;
+  }
+}
+
+.logo {
+  align-self: center;
+  height: 55px;
+  background-color: #ffffff;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.main-nav__button-open {
+  position: absolute;
+  bottom: 17px;
+  right: 20px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 23px;
+    height: 4px;
+    background-color: $primary-color;
+    box-shadow: 0 8px 0 0 $primary-color, 0 16px 0 0 $primary-color,;
+  }
+}
+@media (min-width: $laptop-size) {
+  .main-nav {
+    flex-direction: row;
+    justify-content: center;
+    height: 56px;
+  }
+
+  .main-nav__list {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: auto;
+    background-color: #ffffff;
+  }
+
+  .main-nav__list--right {
+    order: 1;
+  }
+
+  .main-nav__item {
+    border: none;
+    margin: auto;
+    min-width: 150px;
+  }
+
+  .main-nav__item::after,
+  .main-nav__item::before {
+    display: none;
+  }
+
+  .main-nav__link {
+    margin: auto;
+    font-size: 14px;
+    line-height: 55px;
+    font-weight: 700;
+    color: #000000;
+
+    &:focus,
+    &:hover {
+      background-color: #ffffff;
+      color: $primary-color;
+    }
+
+    &:active {
+      background-color: #ffffff;
+      color: #b2b2b2;
+    }
+  }
+
+  .main-nav__link--active {
+    color: $hotels-color-buttons;
+
+    &:focus,
+    &:hover {
+      background-color: #ffffff;
+      color: #604e43;
+    }
+
+    &:active {
+      background-color: #ffffff;
+      color: #d6d0cc;
+    }
+  }
+
+  .main-nav__button {
+    display: none;
+  }
+}
+@media (min-width: $desktop-size) {
+  .page-header {
+    width: $desktop-size;
+  }
+
+  .logo--image {
+    display: block;
+    box-sizing: border-box;
+    width: 188px;
+    height: 96px;
+    padding-left: 188px;
+    background: url("./img/logo-desktop.svg") no-repeat;
+  }
+}

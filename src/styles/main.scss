@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'PT Sans';
+  src: url(../fonts/PTSans-Regular.woff2) format("woff2"),
+  url(../fonts/pt-sans.regular.woff) format("woff"),
+  url(../fonts/PTSans-Regular.ttf) format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url(../fonts/PTSans-Bold.woff2) format("woff2"),
+  url(../fonts/pt-sans.bold.woff) format("woff"),
+  url(../fonts/PTSans-Bold.ttf) format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+@import 'variables';
+@import 'mixins';
+@import 'body';
+@import 'button';
+@import 'header';
+@import 'intro';
+@import 'introduction';
+@import 'advantages';
+@import 'main-page__hotels';
+@import 'main-page__search-form';
+@import 'map';
+@import 'page-footer';
+@import 'photo';
+@import 'video';
+@import 'control-panel';
+@import 'feedback';
+@import 'pop-up';
+@import 'hotels-page__search';
+@import 'double-range';
+@import 'hotels-page__sorting';
+@import 'hotels-page__hotels';
