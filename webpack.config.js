@@ -58,7 +58,8 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             url: (url) => {
-                                if (url.includes('.png') || url.includes('.jpg') || url.includes('.svg')) {
+                                if (url.includes('.png') || url.includes('.jpg') || url.includes('.svg')
+                                    || url.includes('.gif')) {
                                     return false;
                                 }
 
